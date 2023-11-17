@@ -97,6 +97,12 @@ function getCookie(cname) {
 }
 console.log(getCookie("age"));//returns the corresponding cookie value
 
+
+function deleteCookie(cname) {
+    document.cookie = `${cname}=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
+}
+
+
 var age=getCookie("age");
 if(!age){
     age=prompt("Nhập tuổi");
@@ -110,3 +116,10 @@ if(age>=18)
     console.log("Cho phép truy cập");
 else
     console.log("OK lun");
+
+
+////////////
+const nutbam1=document.getElementById("delete_cookie");
+nutbam1.addEventListener("click",()=>{
+    deleteCookie("age");
+});
